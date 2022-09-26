@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table cellpadding="9">
+        <tr>
+            <td>UTS</td>
+            <td>=</td>
+            <td><input id="uts"></td>
+        </tr>
+        <tr>
+            <td>Tugas</td>
+            <td>=</td>
+            <td><input id="tugas"td>
+        </tr>
+        <tr>
+            <td>UAS</td>
+            <td>=</td>
+            <td><input id="uas"></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text-end">
+                <input type="button" onclick="hitung()" value="Hitung" class="btn btn-primary">
+            </td>
+        </tr>
+        <tr>
+            <td>Nilai Huruf</td>
+            <td>=</td>
+            <td id="huruf"></td>
+        </tr>
+    </table>
+
+    
+    <script>
+        function hitung() {
+            let UTS = document.getElementById("uts").value
+            let Tugas = document.getElementById("tugas").value
+            let UAS = document.getElementById("uas").value
+            let akhir = (0.3 * UTS) + (0.4 * Tugas) + (0.3 * UAS)
+            let huruf
+            
+            if (akhir >= 85) {
+                huruf = "A"
+            } 
+            else if (akhir >= 75){
+                huruf = "B"
+            }
+            else if (akhir >= 65){
+                huruf = "C"
+            }
+            else if (akhir >= 50){
+                huruf = "D"
+            }
+            else {
+                huruf = "E"
+            }
+
+            document.getElementById("huruf").innerText = huruf
+        }
+    </script>
+</body>
+</html>
